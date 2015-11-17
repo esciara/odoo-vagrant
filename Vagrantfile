@@ -73,7 +73,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "docker" do |d|
     d.run "db", image: "postgres",
       args: "-d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo"
-    d.run "odoo", image: "esciara/odoo:9.0-20151104",
+    d.run "odoo", image: "esciara/odoo:9.0-20151104-1",
       args: "-v /vagrant/extra-addons:/mnt/extra-addons -p 8069:8069 --link db:db -t"
   end
   # config.vm.provision "shell", inline: <<-SHELL
